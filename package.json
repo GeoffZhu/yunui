@@ -1,0 +1,12 @@
+{
+  "name": "yunui",
+  "version": "1.0.0",
+  "author": "Geoff Zhu",
+  "private": false,
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-watch": "*",
+    "matchdep": "*"
+  }
+}
