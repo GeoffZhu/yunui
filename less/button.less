@@ -14,11 +14,10 @@
   vertical-align: middle;
   touch-action: manipulation;
   cursor: pointer;
-  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  background-image: none;
   border: 1px solid transparent;
   white-space: nowrap;
-  .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @btn-border-radius-base);
-  //.user-select(none);
+  .button-size(@btn-padding; @font-size-base; @line-height-base; @btn-border-radius-base);
 
   &,
   &:active,
@@ -47,7 +46,7 @@
   &[disabled],
   fieldset[disabled] & {
     cursor: @cursor-disabled;
-    //.opacity(.65);
+    .opacity(.65);
     //.box-shadow(none);
   }
 
@@ -66,6 +65,7 @@
 .btn-default {
   .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
 }
+/* 
 .btn-primary {
   .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
 }
@@ -75,7 +75,7 @@
 }
 // Info appears as blue-green
 .btn-info {
-  .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
+  .button-variant(@bstn-info-color; @btn-info-bg; @btn-info-border);
 }
 // Warning appears as orange
 .btn-warning {
@@ -85,7 +85,7 @@
 .btn-danger {
   .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
 }
-
+ */
 
 // Link buttons
 // -------------------------
@@ -120,7 +120,7 @@
   fieldset[disabled] & {
     &:hover,
     &:focus {
-      color: @btn-link-disabled-color;
+      cursor: @cursor-disabled;
       text-decoration: none;
     }
   }
@@ -130,17 +130,17 @@
 // Button Sizes
 // --------------------------------------------------
 
-.btn-lg {
+/* .btn-lg {
   // line-height: ensure even-numbered height of button next to large input
-  .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @btn-border-radius-large);
+  .button-size(@btn-padding; @font-size-large; @line-height-large; @btn-border-radius-large);
 }
 .btn-sm {
   // line-height: ensure proper height of button next to small input
-  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @btn-border-radius-small);
+  .button-size@btn-padding; @font-size-small; @line-height-small; @btn-border-radius-small);
 }
 .btn-xs {
-  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @btn-border-radius-small);
-}
+  .button-size(@btn-padding; @font-size-small; @line-height-small; @btn-border-radius-small);
+} */
 
 
 // Block button
