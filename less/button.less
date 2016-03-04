@@ -1,7 +1,4 @@
-//
 // Buttons
-// --------------------------------------------------
-
 
 // Base styles
 // --------------------------------------------------
@@ -24,7 +21,7 @@
   &.active {
     &:focus,
     &.focus {
-      //.tab-focus();
+      .tab-focus();
     }
   }
 
@@ -47,7 +44,7 @@
   fieldset[disabled] & {
     cursor: @cursor-disabled;
     .opacity(.65);
-    //.box-shadow(none);
+    .box-shadow(none);
   }
 
   a& {
@@ -57,40 +54,32 @@
     }
   }
 }
-
-
-// Alternate buttons
 // --------------------------------------------------
-
+//常规白色按钮
 .btn-default {
   .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
 }
-/* 
+//常规红色按钮
 .btn-primary {
   .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+  padding: 7px 17px;
 }
-// Success appears as green
-.btn-success {
-  .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+// 下载按钮样式
+.btn-download {
+  .button-variant(@btn-download-color; @btn-download-bg; @btn-download-border);
 }
-// Info appears as blue-green
-.btn-info {
-  .button-variant(@bstn-info-color; @btn-info-bg; @btn-info-border);
+// --------------------------------------------------
+// 按钮大小定义
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  .button-size(@btn-padding; @font-size-large; @line-height-large; @btn-border-radius-large);
 }
-// Warning appears as orange
-.btn-warning {
-  .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  .button-size(@btn-padding; @font-size-small; @line-height-small; @btn-border-radius-small);
 }
-// Danger and error appear as red
-.btn-danger {
-  .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
-}
- */
-
-// Link buttons
-// -------------------------
-
-// Make a button look and behave like a link
+// --------------------------------------------------
+// 把按钮变为超链接样式
 .btn-link {
   color: @link-color;
   font-weight: normal;
@@ -125,36 +114,17 @@
     }
   }
 }
-
-
-// Button Sizes
 // --------------------------------------------------
-
-/* .btn-lg {
-  // line-height: ensure even-numbered height of button next to large input
-  .button-size(@btn-padding; @font-size-large; @line-height-large; @btn-border-radius-large);
-}
-.btn-sm {
-  // line-height: ensure proper height of button next to small input
-  .button-size@btn-padding; @font-size-small; @line-height-small; @btn-border-radius-small);
-}
-.btn-xs {
-  .button-size(@btn-padding; @font-size-small; @line-height-small; @btn-border-radius-small);
-} */
-
-
 // Block button
-// --------------------------------------------------
-
 .btn-block {
   display: block;
   width: 100%;
 }
 
-// Vertically space out multiple block buttons
+// 上下两个相邻的btn-block会有5px间距
 .btn-block + .btn-block {
   margin-top: 5px;
-}
+}// --------------------------------------------------
 
 // Specificity overrides
 input[type="submit"],
