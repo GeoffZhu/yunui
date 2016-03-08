@@ -3,13 +3,16 @@
 <title>网易云UI模仿</title>
 <link rel="stylesheet" href="./dist/css/yunui.css">
 </head>
-<body>
+<body style="margin-left: 10px;">
     <h1>h1默认样式</h1>
     <h2>h2默认样式</h2>
     <h3>h3默认样式</h3>
     <h4>h4默认样式</h4>
     <h5>h5默认样式</h5>
     <h6>h6默认样式</h6>
+    <hr>
+
+    <h2>按钮分为三种颜色和大小</h2>
     <div style="margin-top:10px;">
     	<a type="button" class="btn btn-default btn-sm">default</a>
     	<button type="button" class="btn btn-primary btn-sm">primary</button>
@@ -25,6 +28,19 @@
     	<button type="button" class="btn btn-primary btn-lg">download</button>
     	<button type="button" class="btn btn-download btn-lg">download</button>
     </div>
-    <button type="button" class="btn btn-primary"><span class="badge">badge</span>primary</button>
+    <!-- <button type="button" class="btn btn-primary"><span class="badge">badge</span>primary</button> -->
+	
+	<hr>
+	<h2>按钮组</h2>
+    <div class="btn-grup" style="padding: 10px;">
+    	<button type="button" class="btn btn-default current">左边</button><button 
+    	type="button" class="btn btn-default">中间</button><button 
+    	type="button" class="btn btn-default">右边</button>
+    </div>
+    <div class="btn-grup" style="padding: 10px; background-color:#d63d35;">
+    	<button type="button" class="btn btn-primary current">左边</button><button 
+    	type="button" class="btn btn-primary">中间</button><button 
+    	type="button" class="btn btn-primary">右边</button>
+    </div>
 </body>
 </html>
