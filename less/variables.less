@@ -6,6 +6,7 @@
 
 //== Colors
 @red-base: #d63d35;
+@red-dark: darken(@red-base, 5%);
 @blue-base: #3b85ce;
 
 @white: #fff;
@@ -14,6 +15,7 @@
 @gray-base: #8d8e90;
 @gray-dark: #313131;   
 @gray-light: #e2e3e7;
+@gray-lighter: #f7f7f7;
 
 //** Global link color.
 @link-color:            @gray-dark;
@@ -25,8 +27,14 @@
 
 //--Body
 @body-bg: #f5f5f5;
+//header
+@header-height: 80px;
+@nav-height: 40px;
+
+@nav-bg: darken(@body-bg, 3%);
+
 @text-color: @gray-dark;
-@font-family-sans-serif:  Arial, Helvetica, sans-serif;
+@font-family-sans-serif:  '微软雅黑',Arial, Helvetica, sans-serif;
 @font-family-base:        @font-family-sans-serif;
 
 @font-size-base: 14px;
