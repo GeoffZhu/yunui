@@ -27,9 +27,9 @@
     <div class="nav">
         <div class="container">
             <ul>
-                <li class="item current"><a href="">歌曲</a></li>
-                <li class="item"><a href="">歌手</a></li>
-                <li class="item"><a href="">专辑</a></li>
+                <li class="item current"><a href="javascritp:void(0);">歌曲</a></li>
+                <li class="item"><a href="javascritp:void(0);">歌手</a></li>
+                <li class="item"><a href="javascritp:void(0);">专辑</a></li>
             </ul>
         </div>
     </div>
@@ -71,5 +71,33 @@
     	type="button" class="btn btn-primary">中间</button><button 
     	type="button" class="btn btn-primary">右边</button>
     </div>
+    <div class="content">
+        <a href="">sssss</a>
+    </div>
+    <div class="footer" style="position:fixed;bottom:0">
+        <div class="container">
+            <div class="advert">
+                <a href="" class="icon">Yun</a>
+                <div class="intro">
+                    <h1>注意事项</h1>
+                    <h2>遵守标准</h2>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script type="text/javascript">
+        var nav = document.getElementsByClassName("nav");
+        nav[0].addEventListener('click',function(event){
+            var target = event.target.parentNode;
+            if(target.className == "item"){
+                var items = target.parentNode.getElementsByTagName('li');
+                for(var i = 0 ; i<items.length ; i++){
+                    items[i].className = "item";
+                }
+                target.className = "item current";
+            }
+        });
+    </script>
 </body>
 </html>
