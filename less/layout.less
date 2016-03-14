@@ -211,6 +211,10 @@
     background-color: @nav-bg;
     box-shadow: 0px -3px 2px 0px @gray-light;
     .advert{
+        width: 20%;
+        overflow: hidden;
+        float: left;
+        margin-top: @footer-height /4;
         .icon{
             float: left;
             display: block;
@@ -220,7 +224,6 @@
             text-align: center;
             width: @footer-height /2;
             margin-left: @footer-height /4;
-            margin-top: @footer-height /4;
             margin-right: @footer-height /4;
             text-decoration: none;
             border: 2px solid @gray-base;
@@ -246,7 +249,6 @@
         .intro{
             float: left;
             height: @footer-height /2;
-            padding-top: @footer-height /4; 
             >h1{
                 font-size: @font-size-large;
                 color: @gray-dark;  
@@ -256,6 +258,12 @@
                 color: @gray-base; 
             }
         }
+    }
+    .copy{
+        text-align: center;
+        margin-top: @footer-height /4;
+        width: 60%;
+        float: left;
     }
     
 }
