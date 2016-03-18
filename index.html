@@ -2,6 +2,9 @@
 <head>
 <title>网易云UI模仿</title>
 <link rel="stylesheet" href="./dist/css/yunui.css">
+<script type="text/javascript" src="./js/libs/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="./js/tips.js"></script>
+<script type="text/javascript" src="./js/validate.js"></script>
 </head>
 <body>
     <div class="header">
@@ -33,47 +36,61 @@
             </ul>
         </div>
     </div>
-    <h1>h1默认样式</h1>
-    <h2>h2默认样式</h2>
-    <h3>h3默认样式</h3>
-    <h4>h4默认样式</h4>
-    <h5>h5默认样式</h5>
-    <h6>h6默认样式</h6>
-    <hr>
-
-    <h2>按钮分为三种颜色和大小</h2>
-    <div style="margin-top:10px;">
-    	<a type="button" class="btn btn-default btn-sm">default</a>
-    	<button type="button" class="btn btn-primary btn-sm">primary</button>
-    	<button type="button" class="btn btn-download btn-sm">download</button>
-    </div>
-    <div style="margin-top:10px;">
-    	<button type="button" class="btn btn-default">default</button>
-    	<button type="button" class="btn btn-primary">primary</button>
-    	<button type="button" class="btn btn-download">download</button>
-    </div>
-    <div style="margin-top:10px;">
-    	<button type="button" class="btn btn-default btn-lg">default</button>
-    	<button type="button" class="btn btn-primary btn-lg">download</button>
-    	<button type="button" class="btn btn-download btn-lg">download</button>
-    </div>
-    <!-- <button type="button" class="btn btn-primary"><span class="badge">badge</span>primary</button> -->
-	
-	<hr>
-	<h2>按钮组</h2>
-    <div class="btn-grup" style="padding: 10px;">
-    	<button type="button" class="btn btn-default current">左边</button><button 
-    	type="button" class="btn btn-default">中间</button><button 
-    	type="button" class="btn btn-default">右边</button>
-    </div>
-    <div class="btn-grup" style="padding: 10px; background-color:#d63d35;">
-    	<button type="button" class="btn btn-primary current">左边</button><button 
-    	type="button" class="btn btn-primary">中间</button><button 
-    	type="button" class="btn btn-primary">右边</button>
-    </div>
     <div class="content">
+        <h1>h1默认样式</h1>
+        <h2>h2默认样式</h2>
+        <h3>h3默认样式</h3>
+        <h4>h4默认样式</h4>
+        <h5>h5默认样式</h5>
+        <h6>h6默认样式</h6>
+        <hr>
+
+        <h2>按钮分为三种颜色和大小</h2>
+        <div style="margin-top:10px;">
+            <a type="button" class="btn btn-default btn-sm">default</a>
+            <button type="button" class="btn btn-primary btn-sm">primary</button>
+            <button type="button" class="btn btn-download btn-sm">download</button>
+        </div>
+        <div style="margin-top:10px;">
+            <button type="button" class="btn btn-default">default</button>
+            <button type="button" class="btn btn-primary">primary</button>
+            <button type="button" class="btn btn-download">download</button>
+        </div>
+        <div style="margin-top:10px;">
+            <button type="button" class="btn btn-default btn-lg">default</button>
+            <button type="button" class="btn btn-primary btn-lg">download</button>
+            <button type="button" class="btn btn-download btn-lg">download</button>
+        </div>
+        <!-- <button type="button" class="btn btn-primary"><span class="badge">badge</span>primary</button> -->
+        
+        <hr>
+        <h2>按钮组</h2>
+        <div class="btn-grup" style="padding: 10px;">
+            <button type="button" class="btn btn-default current">左边</button><button 
+            type="button" class="btn btn-default">中间</button><button 
+            type="button" class="btn btn-default">右边</button>
+        </div>
+        <div class="btn-grup" style="padding: 10px; background-color:#d63d35;">
+            <button type="button" class="btn btn-primary current">左边</button><button 
+            type="button" class="btn btn-primary">中间</button><button 
+            type="button" class="btn btn-primary">右边</button>
+        </div>
+
+        <hr>
+        <h2>提示框插件</h2>
+        <div class="btn-grup" style="padding: 10px;">
+            <button type="button" class="btn btn-primary" onClick='$.tips({type:0,text:"警告"})'>警告提示</button><button 
+            type="button" class="btn btn-primary" onClick='$.tips({type:1,text:"成功"})'>成功提示</button>
+        </div>
+
+        <hr>
+        <h2>输入框</h2>
+        <div class="form-group">
+            <input type="text" style="height: 33px;border-radius: 5px;outline: none;" class="form-control" placeholder="" data-validate='{"required":true,"label":"姓名","type":"text","reg":"name"}'>
+            <input type="button" class="btn btn-default" id="form-submit" value="校验">
+        </div>
     </div>
-    <div class="footer" style="position:fixed;bottom:0">
+    <div class="footer">
         <div class="container">
             <div class="advert">
                 <a href="" class="icon">Yun</a>
@@ -86,10 +103,10 @@
                 <p>网站地图-基本信息©1997-2016</p>
                 <p>网络文化经营许可证</p>
             </div>
-        </div>
-        
+        </div>   
     </div>
     <script type="text/javascript">
+    //原声js事件冒泡
         var nav = document.getElementsByClassName("nav");
         nav[0].addEventListener('click',function(event){
             var target = event.target.parentNode;
@@ -100,6 +117,25 @@
                 }
                 target.className = "item current";
             }
+        });
+
+        //form校验
+        $('#form-submit').on('click',function(e){
+            var result = $.validate('.form-group');
+            if(result.flag){
+                //校验后，无误，执行
+                $.tips({
+                    type: 1,
+                    text: result.msg || '表单信息对啦'
+                });
+            }else{
+                //校验后，有误，执行
+                $.tips({
+                    type: 0,
+                    text: result.msg || '表单信息有误'
+                });
+            }
+            
         });
     </script>
 </body>

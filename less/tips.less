@@ -1,0 +1,58 @@
+.scui-tips {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 20000000;
+    display: none;
+    .animation(rise 500ms ease-out both); 
+    .scui-tips-wrap {
+        padding: 0 20px 0 27px;
+        display: inline-block;
+        font-size: 14px;
+        border-radius: 4px;
+        color: @white;
+        height: 50px;
+        line-height: 50px;
+        min-width: 320px;
+        i {
+            display: inline-block;
+            position: relative;
+            top: 2px;
+            right: 3px;
+        }
+    }
+    .scui-tips-text {}
+    &.scui-tips-error {
+        .scui-tips-wrap {
+            background: @orange-base;
+        }
+    }
+    &.scui-tips-success {
+        .scui-tips-wrap {
+            background: @green-base;
+        }
+    }
+}
+
+@keyframes rise { 
+    0% {
+        bottom: 0; 
+        .opacity(0)
+    }
+    100% { 
+        bottom: 10px; 
+        .opacity(1);
+    } 
+}
+@-webkit-keyframes rise { 
+    0% {
+        bottom: 0; 
+        .opacity(0)
+    }
+    100% { 
+        bottom: 10px; 
+        .opacity(1);
+    } 
+}
