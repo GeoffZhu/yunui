@@ -59,7 +59,26 @@
 @line-height-base: 1.428571429;
 @line-height-large: 1.6;
 @line-height-small: 1.2;
+@line-height-computed: floor((@font-size-base * @line-height-base));
 
+@padding-base-vertical:     6px;
+@padding-base-horizontal:   12px;
+
+@padding-large-vertical:    10px;
+@padding-large-horizontal:  16px;
+
+@padding-small-vertical:    5px;
+@padding-small-horizontal:  10px;
+
+@padding-xs-vertical:       1px;
+@padding-xs-horizontal:     5px;
+
+@line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
+@line-height-small:         1.5;
+
+@border-radius-base:        4px;
+@border-radius-large:       6px;
+@border-radius-small:       3px;
 
 //--Button
 @btn-font-weight: @font-size-base;
@@ -81,3 +100,12 @@
 	@btn-download-color:              @white;
 	@btn-download-bg:                 @blue-base;
 	@btn-download-border:             #fff;
+
+//input部分
+@input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 2);
+
+@input-height-large:             (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
+
+@input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+
+
